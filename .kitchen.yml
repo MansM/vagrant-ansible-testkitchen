@@ -10,21 +10,13 @@ provisioner:
   require_chef_omnibus: false
   require_ruby_for_busser: true
   require_chef_for_busser: false 
-#   name: ansible_playbook
-#   hosts: all
-#   playbook: ansible/playbook.yaml
-#   ansible_inventory: .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
-#   require_chef_for_busser: false
-#   require_ruby_for_busser: false
-#   role_path: ./ansible/roles
-#   ansible_connection: ssh
 
 platforms:
   - name: mansm/CentOS-7
 
 verifier:
   ruby_bindir: '/usr/bin'
-  
+
 suites:
   - name: default 
     run_list:
