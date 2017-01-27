@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: install ruby
+      yum: name=ruby state=present
+    - name: do something
+      user: name=testkees createhome=true state=present
