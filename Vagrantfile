@@ -1,8 +1,6 @@
 Vagrant.configure(2) do |config|
   VROOT=""
   config.ssh.insert_key = false
-  config.hostmanager.enabled = true
-  #config.cache.scope = :box
 
   config.vm.box = "mansm/CentOS-7"
   
