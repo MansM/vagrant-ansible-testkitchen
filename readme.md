@@ -14,4 +14,7 @@ bundle install
 kitchen test
 ```
 
-The current setup will have a passing and a failing test
+The current setup has:
+* failing user test
+* succeeding user test
+* succeeding block device test

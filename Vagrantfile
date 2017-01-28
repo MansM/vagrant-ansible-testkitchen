@@ -16,6 +16,10 @@ Vagrant.configure(2) do |config|
   config.vm.define "manager1" do |vmconfig|
     vmconfig.vm.hostname = "manager1"
     vmconfig.vm.network "private_network", ip: "172.16.50.11"
+    vmconfig.vm.provider :virtualbox do |virtualbox|
+      virtualbox.customize ["createhd", "--filename", "#{VROOT}disk1.vmdk", "--size", 1024]
+      virtualbox.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", "1", "--device", 0, "--type", "hdd", "--medium", "#{VROOT}disk1.vmdk"]
+    end
     vmconfig.vm.provision :ansible do |ansible|
       ansible.playbook =  "#{VROOT}ansible/playbook.yaml"
       ansible.sudo = true
